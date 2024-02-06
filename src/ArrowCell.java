@@ -45,6 +45,10 @@ public class ArrowCell
         return myColor;
     }
 
+    public void setMyColor(Color c)
+    {
+        myColor = c;
+    }
     @Override
     public String toString() {
         return "ArrowCell{" +
