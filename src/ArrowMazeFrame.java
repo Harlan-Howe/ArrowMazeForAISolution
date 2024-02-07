@@ -41,6 +41,7 @@ public class ArrowMazeFrame extends JFrame implements ActionListener
         if (aEvt.getSource()==executeButton)
         {
             System.out.println("Execute pressed");
+            mazePanel.execute();
         }
     }
 }
