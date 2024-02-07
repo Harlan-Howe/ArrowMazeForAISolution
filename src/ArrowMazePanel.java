@@ -7,7 +7,7 @@ public class ArrowMazePanel extends JPanel
     public ArrowCell[][] myGrid;
 
     public static final int NUM_ROWS = 25;
-    public static final int NUM_COLS = 25;
+    public static final int NUM_COLS = 35;
     public ArrowMazePanel()
     {
         super();
@@ -143,7 +143,10 @@ public class ArrowMazePanel extends JPanel
     public void execute()
     {
         for (int cellNum = 0; cellNum<NUM_ROWS*NUM_COLS; cellNum++)
-            colorPathStartingAt(cellNum/NUM_COLS, cellNum%NUM_COLS);
-
+        {
+            colorPathStartingAt(cellNum / NUM_COLS, cellNum % NUM_COLS);
+        }
+        if (noBlackCellsRemain())
+            System.out.println("All cells painted.");
     }
 }
