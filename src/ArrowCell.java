@@ -6,10 +6,10 @@ public class ArrowCell
     private int direction;
     private Color myColor;
 
-    public final static int RIGHT = 0;
-    public final static int DOWN = 1;
-    public final static int LEFT = 2;
-    public final static int UP = 3;
+    public final static int LEFT = 0;
+    public final static int UP = 1;
+    public final static int RIGHT = 2;
+    public final static int DOWN = 3;
 
     public final static int CELL_SIZE = 24;
     public final static int LEFT_MARGIN = 10;
@@ -61,11 +61,12 @@ public class ArrowCell
 
     public void drawSelf(Graphics g)
     {
-        g.setColor(Color.WHITE);
-        g.fillRect(LEFT_MARGIN + CELL_SIZE*myCol, TOP_MARGIN + CELL_SIZE*myRow, CELL_SIZE, CELL_SIZE);
-        g.setColor(Color.BLACK);
-        g.drawRect(LEFT_MARGIN + CELL_SIZE*myCol, TOP_MARGIN + CELL_SIZE*myRow, CELL_SIZE, CELL_SIZE);
+
         g.setColor(myColor);
+        g.fillRect(LEFT_MARGIN + CELL_SIZE*myCol, TOP_MARGIN + CELL_SIZE*myRow, CELL_SIZE, CELL_SIZE);
+        g.setColor(Color.LIGHT_GRAY);
+        g.drawRect(LEFT_MARGIN + CELL_SIZE*myCol, TOP_MARGIN + CELL_SIZE*myRow, CELL_SIZE, CELL_SIZE);
+        g.setColor(Color.WHITE);
         g.setFont(arrowFont);
         int arrowWidth = ((Graphics2D)g).getFontMetrics().stringWidth(arrows[direction]);
         g.drawString(arrows[direction],LEFT_MARGIN + CELL_SIZE * myCol + CELL_SIZE/2 - arrowWidth/2,
