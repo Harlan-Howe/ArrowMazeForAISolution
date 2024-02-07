@@ -15,9 +15,14 @@ public class ArrowMazeFrame extends JFrame implements ActionListener
         setSize((ArrowCell.LEFT_MARGIN*2+ArrowCell.CELL_SIZE*ArrowMazePanel.NUM_COLS),
                 ArrowCell.TOP_MARGIN*2+ArrowCell.CELL_SIZE*ArrowMazePanel.NUM_ROWS+80);
         setResizable(false);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         getContentPane().setLayout(new BorderLayout());
+
+        // add the maze panel to the center
         mazePanel = new ArrowMazePanel();
         getContentPane().add(mazePanel, BorderLayout.CENTER);
+
+        // now layout the bottom panel with the buttons
         JPanel bottomPanel = new JPanel();
         resetButton = new JButton("Reset");
         executeButton =new JButton("Execute");
@@ -26,8 +31,6 @@ public class ArrowMazeFrame extends JFrame implements ActionListener
         bottomPanel.add(resetButton);
         bottomPanel.add(executeButton);
         getContentPane().add(bottomPanel, BorderLayout.SOUTH);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
     }
 
     @Override
