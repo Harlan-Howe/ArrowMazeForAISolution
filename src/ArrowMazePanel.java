@@ -154,7 +154,7 @@ public class ArrowMazePanel extends JPanel
      * identify the fraction of cells in myGrid that are not black.
      * @return - the fraction of non-black cells in myGrid.
      */
-    public double getPercentageColored()
+    public double getPercentageNonBlack()
     {
         int count = 0;
         for (int cellNum = 0; cellNum<NUM_ROWS*NUM_COLS; cellNum++)

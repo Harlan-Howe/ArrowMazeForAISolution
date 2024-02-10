@@ -55,7 +55,7 @@ public class ArrowMazeFrame extends JFrame implements ActionListener
         {
             System.out.println("Find 1 path pressed.");
             mazePanel.find1Path();
-            statusLabel.setText((int)(100*mazePanel.getPercentageColored())+"% colored");
+            statusLabel.setText((int)(100*mazePanel.getPercentageNonBlack())+"% colored");
         }
         if (aEvt.getSource()== findAllPathsButton)
         {
